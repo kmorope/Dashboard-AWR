@@ -1,0 +1,34 @@
+<template>
+  <style>
+    .modal-content {
+      display: grid;
+      padding: 20px;
+      grid-template-columns: 1px 1fr;
+      border: 1px solid #c7c7c7;
+      margin: 15px;
+      border-radius: 4px;
+      background-color: #f0f0f0;
+    }
+  </style>
+  <rwc-modal-layout theme="blue-header">
+    <span slot="header">
+      <span>Settings</span>
+    </span>
+    <span slot="content">
+      <div class="modal-content">
+        <img class="user-avatar" src.bind="userData.picture.medium" alt="">
+        <div>
+          <rwc-text-input-field label="First Name" value="${userData.name.first}" required edit-mode>
+          </rwc-text-input-field>
+          <rwc-text-input-field label="Last Name" value="${userData.name.last}" required edit-mode>
+          </rwc-text-input-field>
+          <rwc-text-input-field label="Email" value="${userData.email}"></rwc-text-input-field>
+        </div>
+      </div>
+    </span>
+    <span slot="actions">
+      <button class="rwa-button small" click.delegate="close()">Save</button>
+      <button class="rwa-button small" click.delegate="close()">Cancel</button>
+    </span>
+  </rwc-modal-layout>
+</template>

@@ -1,0 +1,19 @@
+<template>
+  <require from="relativity-web-components/dist/icons/styles.css"></require>
+  <require from="relativity-web-components/dist/styles/rwa-bundle.css"></require>
+  <require from="relativity-web-components/dist/styles/rwa-application.css"></require>
+  <require from="./css/reset.css"></require>
+  <require from="./css/style.css"></require>
+  <require from="./components/sidebar/sidebar"></require>
+  <require from="./components/overview/overview"></require>
+  <require from="./components/documents/documents"></require>
+  <require from="./components/settings/settings"></require>
+  <div class="container">
+    <sidebar callback.call="testModal.open(user)" view-model.ref="sidebar"></sidebar>
+    <div class="dashboard-container">
+      <overview></overview>
+      <documents></documents>
+    </div>
+  </div>
+  <settings view-model.ref="testModal" class="hidden"></settings>
+</template>
