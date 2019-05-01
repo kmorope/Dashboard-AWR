@@ -1,0 +1,14 @@
+<template>
+  <ul class="contacts-ul">
+    <li class="contact-item" repeat.for="contact of contacts">
+      <div class="contact">
+        <img class="contact-avatar" src.bind="contact.picture.medium" alt="">
+        <div class="contact-info">
+          <span class="contact-name">${contact.name.last + ', ' + contact.name.first}</span>
+          <span class="contact-email">${contact.email}</span>
+          <span class="contact-phone">${contact.phone}</span>
+        </div>
+      </div>
+    </li>
+  </ul>
+</template>

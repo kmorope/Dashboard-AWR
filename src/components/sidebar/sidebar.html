@@ -5,9 +5,9 @@
         <span class="user-name">${user.name.first + ' ' + user.name.last}</span>
     </div>
     <div class="menu">
-      <ul>
-        <li repeat.for="item of menuItems" class="${item.selected ? 'selected' : ''}">
-          <div class="menu-item" click.delegate="openModal()">
+      <ul class="menu-ul">
+        <li repeat.for="item of menuItems" class="menu-li ${item.selected ? 'selected' : ''}" data-route="${item.route}">
+          <div class="menu-item" click.delegate="open(item.route,item)">
             <font-awesome-icon class="menu-icon" icon.bind="item.icon"></font-awesome-icon>
             <span class="menu-label">${item.title}</span>
           </div>

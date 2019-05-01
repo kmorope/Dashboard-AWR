@@ -1,0 +1,17 @@
+<template>
+    <require from="../../components/contacts/contacts"></require>
+    <require from="../../components/today/today"></require>
+  <div class="agenda">
+    <div class="card-container calendar-container">
+      <div class="calendar-selector">
+        <rwc-calendar id="calendar1"></rwc-calendar>
+      </div>
+    </div>
+    <div class="card-container agenda-container">
+      <today></today>
+    </div>
+    <div class="card-container contact-container">
+      <contacts contacts.bind="contactList"></contacts>
+    </div>
+  </div>
+</template>

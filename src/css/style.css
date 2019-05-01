@@ -15,6 +15,16 @@
     display: none;
 }
 
+.card-container{    
+    border: 1px solid #c7c7c7;
+    margin: 15px;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
 settings{
     max-height: calc(100% - 100px);
     position: fixed;
@@ -22,6 +32,10 @@ settings{
       left: 50%;
     transform: translate(-50%, -50%);
     z-index: 999;
+}
+
+.menu-li{
+    cursor: pointer;
 }
 
 /* Sidebar */
@@ -69,11 +83,11 @@ settings{
     justify-items: left; 
 }
 
-ul{
+.menu-ul{
     width: 100%;
 }
 
-ul>li{
+.menu-ul>li{
     list-style: none;
     user-select: none;
     width: 100%;
@@ -82,7 +96,7 @@ ul>li{
     color: #7d90e7;
 }
 
-ul>li:hover,.selected{
+.menu-ul>li:hover,.selected{
     cursor: pointer; 
     background-color: #6175d0;
 }
@@ -109,4 +123,70 @@ ul>li:hover,.selected{
 .dashboard-container{
     display: grid;
     grid-column: 1fr;
+}
+
+/* Agenda */
+
+.agenda{
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+    grid-template-areas: "calendar agenda" "contacts agenda";
+    grid-template-rows: 0.5fr 2fr;
+    grid-gap: 2px;
+}
+
+.agenda>.calendar-container{   
+    grid-area: calendar;
+}
+
+.agenda>.contact-container{ 
+    grid-area: contacts;    
+    align-items: center; 
+    align-content: start;
+}
+
+.agenda>.agenda-container{
+    grid-area: agenda;
+    align-items: start; 
+    align-content: start;
+}
+
+/* Contact List */
+
+.contacts-ul{
+    background-color: white;
+    border: 1px solid #c1c1c1c1;
+    border-radius: 5px;
+}
+
+.contact-item{
+    padding: 10px;
+    border-bottom: 1px solid #eeeeee;
+    cursor: pointer;
+}
+
+.contact-item:hover{
+    background-color: #eeeeee;
+}
+
+.contact{
+    display: grid;
+    grid-template-columns: 100px 1fr;
+}
+
+.contact-info{
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 5px;
+}
+
+.contact-info>span{
+    user-select: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+}
+
+.contact-name{
+    font-weight: bold;
+    text-transform: capitalize;
 }

@@ -5,15 +5,13 @@
   <require from="./css/reset.css"></require>
   <require from="./css/style.css"></require>
   <require from="./components/sidebar/sidebar"></require>
-  <require from="./components/overview/overview"></require>
+  <require from="./components/graph/graph"></require>
   <require from="./components/documents/documents"></require>
   <require from="./components/settings/settings"></require>
+  <require from="./views/overview/overview"></require>
   <div class="container">
     <sidebar callback.call="testModal.open(user)" view-model.ref="sidebar"></sidebar>
-    <div class="dashboard-container">
-      <overview></overview>
-      <documents></documents>
-    </div>
+    <router-view></router-view>
   </div>
   <settings view-model.ref="testModal" class="hidden"></settings>
 </template>
